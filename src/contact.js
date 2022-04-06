@@ -1,7 +1,6 @@
-const homeDisplay = (() => {
+const contactDisplay = (() => {
   const createMain = () => {
     const main = document.createElement("main");
-    main.classList.add("main__home");
     const welcome = document.createElement("p");
     welcome.classList.add("main__welcome");
     welcome.textContent = "WELCOME";
@@ -21,4 +20,4 @@ const homeDisplay = (() => {
   return { createMain };
 })();
 
-export { homeDisplay };
+export { contactDisplay };
