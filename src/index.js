@@ -1,6 +1,6 @@
 import "./style.css";
-console.log("Ramunai, sveiksas");
-console.log("Ka tu ?");
-console.log("Ramunas");
-console.log("Nieko");
-console.log("Rimtai?");
+import { pageLoadDisplay } from "./pageload";
+
+const container = document.querySelector("#content");
+
+container.appendChild(pageLoadDisplay.createHeader());

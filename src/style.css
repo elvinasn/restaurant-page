@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap");
 :root {
   --bright-color: #cccccc;
   --bg-color: #3a3335;
@@ -6,6 +7,7 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: "Rubik Wet Paint", cursive;
   box-sizing: border-box;
 }
 
@@ -45,6 +47,8 @@ header > nav {
 header > nav > button {
   background: inherit;
   padding: 15px 30px;
+  position: relative;
+  overflow: hidden;
   color: var(--logo-color);
   font-weight: 500;
   font-size: 1.2rem;
@@ -52,6 +56,8 @@ header > nav > button {
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
   border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 main {
   display: flex;
@@ -94,11 +100,12 @@ main {
     -1px -1px 0 #fff;
   font-weight: 700;
   margin: 20px 0px 50px 0px;
-  transition: 0.3s;
+  transition: 0.5s;
   z-index: 1;
   cursor: pointer;
 }
-.main__btn::before {
+.main__btn::before,
+nav > button::before {
   content: "";
   width: 0;
   height: 400%;
@@ -111,8 +118,17 @@ main {
   display: block;
   z-index: -1;
 }
-.main__btn:hover::before {
+nav > button::before,
+.active {
+  background: black;
+}
+.main__btn:hover::before,
+nav > button:hover::before {
   width: 100%;
+}
+.main__btn:hover,
+nav > button:hover {
+  transform: scale(1.05);
 }
 .logo {
   display: flex;
@@ -125,4 +141,5 @@ main {
 }
 .logo > img {
   height: 70px;
+  width: 70px;
 }
