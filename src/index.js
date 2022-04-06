@@ -4,11 +4,12 @@ import { homeDisplay } from "./home";
 import { menuDisplay } from "./menu";
 import { contactDisplay } from "./contact";
 
-const container = document.querySelector("#content");
+const container = document.createElement("div");
+container.id = "content";
+document.body.appendChild(container);
 container.appendChild(pageLoadDisplay.createHeader());
 container.appendChild(menuDisplay.createMain());
 const navButtons = document.querySelector("nav").querySelectorAll("button");
-console.log(navButtons);
 
 navButtons.forEach((button) => {
   button.addEventListener("click", (e) => {
@@ -27,5 +28,23 @@ navButtons.forEach((button) => {
     } else if (e.target.textContent == "Contact") {
       container.appendChild(contactDisplay.createMain());
     }
+    addMainBtnEvent();
   });
 });
+addMainBtnEvent();
+
+function addMainBtnEvent() {
+  const mainBtn = document.querySelector(".main__btn");
+  if (mainBtn)
+    mainBtn.addEventListener("click", () => {
+      container.removeChild(document.querySelector("main"));
+      navButtons.forEach((btn) => {
+        if (btn.textContent != "Menu") {
+          btn.classList.remove("active");
+        } else {
+          btn.classList.add("active");
+        }
+      });
+      container.appendChild(menuDisplay.createMain());
+    });
+}

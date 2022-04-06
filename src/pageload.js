@@ -1,7 +1,6 @@
 import icon from "./icon.svg";
 const pageLoadDisplay = (() => {
   const createHeader = () => {
-    console.log("Hello");
     const header = document.createElement("header");
     const container = document.createElement("div");
     container.classList.add("logo");
