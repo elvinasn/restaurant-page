@@ -1,19 +1,21 @@
+import icon from "./icon.svg";
 const pageLoadDisplay = (() => {
   const createHeader = () => {
+    console.log("Hello");
     const header = document.createElement("header");
     const container = document.createElement("div");
     container.classList.add("logo");
 
     const myIcon = new Image();
-    myIcon.src = Icon;
-    container.appendChild("myIcon");
+    myIcon.src = icon;
+    container.appendChild(myIcon);
 
     const heading = document.createElement("h1");
     heading.textContent = "JOHN'S SUSHI";
     container.appendChild(heading);
     header.appendChild(container);
 
-    header.appendChild(_createNav);
+    header.appendChild(_createNav());
     return header;
   };
   const _createNav = () => {
@@ -37,4 +39,4 @@ const pageLoadDisplay = (() => {
 
   return { createHeader };
 })();
-export function pageLoadDisplay();
+export { pageLoadDisplay };
