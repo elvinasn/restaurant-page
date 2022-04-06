@@ -8,7 +8,7 @@ const container = document.createElement("div");
 container.id = "content";
 document.body.appendChild(container);
 container.appendChild(pageLoadDisplay.createHeader());
-container.appendChild(menuDisplay.createMain());
+container.appendChild(homeDisplay.createMain());
 const navButtons = document.querySelector("nav").querySelectorAll("button");
 
 navButtons.forEach((button) => {
