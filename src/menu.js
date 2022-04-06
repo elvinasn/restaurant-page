@@ -7,9 +7,33 @@ const menuDisplay = (() => {
     main.classList.add("main__menu");
     const container = document.createElement("div");
 
-    container.appendChild(_createCard(sushi1));
-    container.appendChild(_createCard(sushi2));
-    container.appendChild(_createCard(sushi3));
+    container.appendChild(
+      _createCard(sushi1, "Teriyaki", [
+        "Salmon",
+        "Rice",
+        "Soy sauce",
+        "wasabi",
+        "srirarcha",
+      ])
+    );
+    container.appendChild(
+      _createCard(sushi2, "Rakuzi", [
+        "Salmon",
+        "Rice",
+        "Soy sauce",
+        "wasabi",
+        "srirarcha",
+      ])
+    );
+    container.appendChild(
+      _createCard(sushi3, "Miami", [
+        "Salmon",
+        "Rice",
+        "Soy sauce",
+        "wasabi",
+        "srirarcha",
+      ])
+    );
 
     container.classList.add("menu__container");
 
@@ -17,11 +41,28 @@ const menuDisplay = (() => {
     return main;
   };
 
-  const _createCard = (bgImg) => {
-    const card = document.createElement("div");
-    card.style.backgroundImage = "url('" + bgImg + "')";
-    card.classList.add("menu__card");
-    return card;
+  const _createCard = (bgImg, title, ingredients) => {
+    let ing = `Ingredients: ${ingredients.join(", ")}`;
+    const cardParent = document.createElement("div");
+    cardParent.classList.add("menu__card-parent");
+
+    const cardChild = document.createElement("div");
+    cardChild.style.backgroundImage = "url('" + bgImg + "')";
+    cardChild.classList.add("menu__card-child");
+
+    const name = document.createElement("p");
+    name.classList.add("card__title");
+    name.textContent = title;
+    cardChild.appendChild(name);
+
+    const ingredientsPara = document.createElement("p");
+    ingredientsPara.classList.add("card__ingredients");
+    ingredientsPara.textContent = ing;
+    cardChild.appendChild(ingredientsPara);
+
+    cardParent.appendChild(cardChild);
+
+    return cardParent;
   };
   return { createMain };
 })();
