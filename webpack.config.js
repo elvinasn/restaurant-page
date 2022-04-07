@@ -13,7 +13,6 @@ module.exports = {
       title: "John's Sushi",
     }),
   ],
-  devtool: "inline-source-map",
   module: {
     rules: [
       {
