@@ -21,9 +21,8 @@
 }
 
 body {
-  background: url(./bg.jpg);
+  background: url(./bg.jpg) center center fixed;
   background-size: cover;
-  background-attachment: fixed;
   overflow-x: hidden;
   width: 100vw;
   min-height: 100vh;
@@ -291,5 +290,11 @@ iframe {
   .menu__container,
   .contact__container {
     width: 100%;
+  }
+  .menu__container {
+    padding: 25px;
+  }
+  .menu__container {
+    gap: 25px;
   }
 }
